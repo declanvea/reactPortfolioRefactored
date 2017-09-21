@@ -1,7 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Navbar, NavbarToggler, NavbarBrand, Collapse, NavItem, Nav, NavLink, navTitle} from 'reactstrap';
+import {Navbar, NavbarToggler, NavbarBrand, Collapse, NavItem, Nav, navTitle} from 'reactstrap';
+import '../styles/App.css';
 
 export default class BaseLayout extends React.Component {
   render(){
@@ -9,22 +10,29 @@ export default class BaseLayout extends React.Component {
       "fontFamily": "Arizonia",
       "fontSize": "180%"
     }
+
     return (
       <div style={{backgroundColor: 'gray'}} className="container">
           <div className="container">
            <Navbar color="faded" light toggleable>
              <NavbarToggler right />
-             <NavbarBrand ><Link style={navTitle} to="/">SplashPage</Link></NavbarBrand>
+             <NavbarBrand><NavLink style={navTitle} exact to="/" activeStyle={{color:'green'}}>SplashPage</NavLink></NavbarBrand>
              <Collapse navbar>
                <Nav className="ml-auto" navbar>
                  <NavItem>
-                   <NavLink ><Link to="/home">Home</Link></NavLink>
+                   <NavLink style={{margin:'5px'}} to="/home" activeClassName="selected">Home</NavLink>
                  </NavItem>
                  <NavItem>
-                   <NavLink ><Link to="/about">About</Link></NavLink>
+                   <NavLink style={{margin:'5px'}} to="/about" activeClassName="selected">About</NavLink>
                  </NavItem>
                  <NavItem>
-                   <NavLink ><Link to="/portfolio">Portfolio</Link></NavLink>
+                   <NavLink style={{margin:'5px'}} to="/portfolio" activeClassName="selected">Portfolio</NavLink>
+                 </NavItem>
+                 <NavItem>
+                   <NavLink style={{margin:'5px'}} to="/contact" activeClassName="selected">Contact</NavLink>
+                 </NavItem>
+                 <NavItem>
+                   <NavLink style={{margin:'5px'}} to="/references" activeClassName="selected">References</NavLink>
                  </NavItem>
                </Nav>
              </Collapse>

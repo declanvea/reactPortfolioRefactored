@@ -7,7 +7,9 @@ export default class Home extends React.Component {
     return(
       <div className="container">
         <Jumbotron>
+          <div style={{display:'flex', justifyContent:'center'}}>
             <img src="https://resources.stuff.co.nz/content/dam/images/1/4/6/v/5/5/image.related.StuffLandscapeSixteenByNine.620x349.19a8rl.png/1453233859568.jpg)" alt="coder"/>
+          </div>
             <p className="lead"></p>
             <hr className="my-2" />
             <p className="lead">A little about me:</p>
